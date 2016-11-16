@@ -1,1 +1,1 @@
-# training-selenium3
+# Training Selenium3
