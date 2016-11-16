@@ -12,23 +12,24 @@ import org.testng.annotations.Test;
 /**
  * Created by tigra on 16.11.2016.
  */
-public class task02_01 {
+public class task02_02 {
 
     private WebDriver driver;
     private WebDriverWait wait;
 
     @BeforeTest
     public void start() {
-        //driver = new FirefoxDriver();
-        driver = new ChromeDriver();
+        driver = new FirefoxDriver();
+        //driver = new ChromeDriver();
         wait = new WebDriverWait(driver, 10);
     }
 
     @Test
     public void testTempExample()  {
-        driver.get("http://www.ya.ru/");
-        driver.findElement(By.id("text")).sendKeys("webdriver");
-        driver.findElement(By.xpath("//*[@class='button__text']")).click();
+        driver.get("http://localhost:70/litecart/admin/");
+        driver.findElement(By.name("username")).sendKeys("admin");
+        driver.findElement(By.name("password")).sendKeys("admin");
+        driver.findElement(By.name("login")).click();
 
     }
 
