@@ -9,6 +9,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
+
 /**
  * Created by tigra on 16.11.2016.
  */
@@ -26,9 +28,16 @@ public class task02_01 {
 
     @Test
     public void testTempExample()  {
-        driver.get("http://www.ya.ru/");
-        driver.findElement(By.id("text")).sendKeys("webdriver");
-        driver.findElement(By.xpath("//*[@class='button__text']")).click();
+        try{
+        driver.get("http://www.google.com/");
+        driver.findElement(By.name("q")).sendKeys("webdriver");
+        Thread.sleep(1000);
+        driver.findElement(By.name("btnK")).click();
+        wait.until(titleIs("webdriver - Пошук Google"));
+        Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            }
 
     }
 

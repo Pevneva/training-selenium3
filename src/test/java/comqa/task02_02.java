@@ -19,17 +19,23 @@ public class task02_02 {
 
     @BeforeTest
     public void start() {
-        driver = new FirefoxDriver();
-        //driver = new ChromeDriver();
+        //driver = new FirefoxDriver();
+        driver = new ChromeDriver();
         wait = new WebDriverWait(driver, 10);
     }
 
     @Test
     public void testTempExample()  {
+
+        try{
         driver.get("http://localhost:70/litecart/admin/");
         driver.findElement(By.name("username")).sendKeys("admin");
         driver.findElement(By.name("password")).sendKeys("admin");
         driver.findElement(By.name("login")).click();
+        Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 
