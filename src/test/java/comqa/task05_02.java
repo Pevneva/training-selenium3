@@ -25,8 +25,8 @@ public class task05_02 {
     private WebDriver driver;
     private WebDriverWait wait;
 
-   // int widthRegularPriceStartPage=24;
-    int widthRegularPriceStartPage=23;
+    int widthRegularPriceStartPage=24;
+  //  int widthRegularPriceStartPage=23;
     int heightRegularPriceStartPage=16;
     int widthCompaingPriceStartPage=30;
     int heightCompaingPriceStartPage=20;
@@ -38,16 +38,27 @@ public class task05_02 {
     String startPage="http://localhost:70/litecart";
     String titleStartPage="Online Store | My Store";
     String titleFirstCompaingProductDetailsPage="Yellow Duck | Subcategory | Rubber Ducks | My Store";
+
+    String cssColor="color";
+    String cssTextdecoration="text-decoration";
+    String cssFontweight="font-weight";
+
+
     String regularColorStartPage="rgba(119, 119, 119, 1)";
     String compaignColorStartPage="rgba(204, 0, 0, 1)";
     String regularColorProductdetailstPage="rgba(102, 102, 102, 1)";
     String compaignColorProductDetailsPage="rgba(204, 0, 0, 1)";
+    String reqularFont="line-through";
+    String compaignFont="bold";
+    By allCompaingsProductNames=By.xpath("//div[@id='box-campaigns']/div[@class='content']/ul/li//div[@class='name']");
+    By productNameDetailsPage=By.xpath("//div[@id='box-product']//h1[@class='title']");
     By regularPricesCompaingsProducts=By.xpath("//div[@id='box-campaigns']/div[@class='content']/ul/li//s[@class='regular-price']");
     By compaignPricesCompaingsProducts=By.xpath("//div[@id='box-campaigns']/div[@class='content']/ul/li//strong[@class='campaign-price']");
     By regularPrices=By.xpath("//div[@class='information']//s[@class='regular-price']");
     By compaignPrices=By.xpath("//div[@class='information']//strong[@class='campaign-price']");
 
     List<Boolean> listResults=new ArrayList<Boolean>();
+    String[] productData = new String[3];
 
     @BeforeClass
     public void start() {
@@ -62,8 +73,14 @@ public class task05_02 {
 
         openUrl(startPage, titleStartPage);
         checkAllPropertiesStartPage(regularPricesCompaingsProducts,compaignPricesCompaingsProducts);
+
+        String productName=driver.findElements(allCompaingsProductNames).get(0).getText();
+        String regularPrice=driver.findElements(regularPricesCompaingsProducts).get(0).getText();
+        String campaingPrice=driver.findElements(compaignPricesCompaingsProducts).get(0).getText();
+
         openFirtsProductCampaingSection(driver.findElements(compaignPricesCompaingsProducts).get(0),titleFirstCompaingProductDetailsPage);
         checkAllPropertiesProductDetailsPage(regularPrices, compaignPrices);
+        checkProduct(productName, regularPrice, campaingPrice );
         assertTrue(isAllresultsOk(listResults));
 
     }
@@ -76,47 +93,60 @@ public class task05_02 {
         return result;
     }
 
+    public boolean isProductOk(String data1, String data2){
+        boolean res = data1.equals(data2);
+        if (!res){
+            System.out.println("We see '" + data2 + "' data but EXPECTED " + data1 + "!");
+        }
+        return res;
+    }
+
+
+
+    public void checkProduct(String name, String regPrice, String campPrice){
+        listResults.add(isProductOk(name, driver.findElements(productNameDetailsPage).get(0).getText()));
+        listResults.add(isProductOk(regPrice, driver.findElements(regularPrices).get(0).getText()));
+        listResults.add(isProductOk(campPrice, driver.findElements(compaignPrices).get(0).getText()));
+    }
+
+
     public void checkAllPropertiesStartPage(By regularPrice, By campaingPrice){
 
-        listResults.add(isColorOk2(driver.findElements(regularPrice).get(0),regularColorStartPage));
-        listResults.add(isColorOk2(driver.findElements(campaingPrice).get(0),compaignColorStartPage));
-        listResults.add(isWidthOk2(driver.findElements(regularPrice).get(0),widthRegularPriceStartPage));
-        listResults.add(isWidthOk2(driver.findElements(campaingPrice).get(0),widthCompaingPriceStartPage));
-        listResults.add(isHeigthOk2(driver.findElements(regularPrice).get(0),heightRegularPriceStartPage));
-        listResults.add(isHeigthOk2(driver.findElements(campaingPrice).get(0),heightCompaingPriceStartPage));
+        listResults.add(isStyleOk(driver.findElements(regularPrice).get(0),cssColor,regularColorStartPage));
+        listResults.add(isStyleOk(driver.findElements(campaingPrice).get(0),cssColor,compaignColorStartPage));
+        listResults.add(isStyleOk(driver.findElements(regularPrice).get(0),cssTextdecoration,reqularFont));
+        listResults.add(isStyleOk(driver.findElements(campaingPrice).get(0),cssFontweight,compaignFont));
+        listResults.add(isWidthOk(driver.findElements(regularPrice).get(0),widthRegularPriceStartPage));
+        listResults.add(isWidthOk(driver.findElements(campaingPrice).get(0),widthCompaingPriceStartPage));
+        listResults.add(isHeigthOk(driver.findElements(regularPrice).get(0),heightRegularPriceStartPage));
+        listResults.add(isHeigthOk(driver.findElements(campaingPrice).get(0),heightCompaingPriceStartPage));
 
 
     }
     public void checkAllPropertiesProductDetailsPage(By regularPrice, By campaingPrice){
 
-        listResults.add(isColorOk2(driver.findElements(regularPrice).get(0),regularColorProductdetailstPage));
-        listResults.add(isColorOk2(driver.findElements(campaingPrice).get(0),compaignColorStartPage));
-        listResults.add(isWidthOk2(driver.findElements(regularPrice).get(0),widthRegularPriceProductDetailsPage));
-        listResults.add(isWidthOk2(driver.findElements(campaingPrice).get(0),widthCompaingPriceProductDetailsPage));
-        listResults.add(isHeigthOk2(driver.findElements(regularPrice).get(0),heightRegularPriceProductDetailsPage));
-        listResults.add(isHeigthOk2(driver.findElements(campaingPrice).get(0),heightCompaingPriceProductDetailsPage));
+        listResults.add(isStyleOk(driver.findElements(regularPrice).get(0),cssColor,regularColorProductdetailstPage));
+        listResults.add(isStyleOk(driver.findElements(campaingPrice).get(0),cssColor,compaignColorProductDetailsPage));
+        listResults.add(isStyleOk(driver.findElements(regularPrice).get(0),cssTextdecoration,reqularFont));
+        listResults.add(isStyleOk(driver.findElements(campaingPrice).get(0),cssFontweight,compaignFont));
+        listResults.add(isWidthOk(driver.findElements(regularPrice).get(0),widthRegularPriceProductDetailsPage));
+        listResults.add(isWidthOk(driver.findElements(campaingPrice).get(0),widthCompaingPriceProductDetailsPage));
+        listResults.add(isHeigthOk(driver.findElements(regularPrice).get(0),heightRegularPriceProductDetailsPage));
+        listResults.add(isHeigthOk(driver.findElements(campaingPrice).get(0),heightCompaingPriceProductDetailsPage));
 
     }
 
-    public boolean isColorOk(WebElement el, String color){
-        return el.getCssValue("color").equals(color);
-    }
-
-    public boolean isColorOk2(WebElement el, String color){
-        boolean res = el.getCssValue("color").equals(color);
-        if (!res) {
-            System.out.println("Color is wrong!");
-            System.out.println("Color=" + el.getCssValue("color") + "; EXPECTED: " + color);
+    public boolean isStyleOk(WebElement el, String cssAttr, String cssValue){
+        boolean res = el.getCssValue(cssAttr).equals(cssValue);
+        if (!res){
+            System.out.println(cssAttr + " is wrong!");
+            System.out.println(cssAttr + "=" + el.getCssValue(cssAttr) + "; EXPECTED: " + cssValue);
             System.out.println("WebElement=" + el);
         }
         return res;
     }
 
     public boolean isWidthOk(WebElement el, int width){
-        return el.getSize().getWidth()==width;
-    }
-
-    public boolean isWidthOk2(WebElement el, int width){
         boolean res = el.getSize().getWidth()==width;
         if (!res) {
             System.out.println("Width is wrong!");
@@ -127,10 +157,6 @@ public class task05_02 {
     }
 
     public boolean isHeigthOk(WebElement el, int heigth){
-        return el.getSize().getHeight()==heigth;
-    }
-
-    public boolean isHeigthOk2(WebElement el, int heigth){
         boolean res = el.getSize().getHeight()==heigth;
         if (!res) {
             System.out.println("Height is wrong!");
