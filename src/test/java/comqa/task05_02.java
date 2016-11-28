@@ -26,7 +26,6 @@ public class task05_02 {
     private WebDriverWait wait;
 
     int widthRegularPriceStartPage=24;
-  //  int widthRegularPriceStartPage=23;
     int heightRegularPriceStartPage=16;
     int widthCompaingPriceStartPage=30;
     int heightCompaingPriceStartPage=20;
@@ -38,18 +37,16 @@ public class task05_02 {
     String startPage="http://localhost:70/litecart";
     String titleStartPage="Online Store | My Store";
     String titleFirstCompaingProductDetailsPage="Yellow Duck | Subcategory | Rubber Ducks | My Store";
-
     String cssColor="color";
     String cssTextdecoration="text-decoration";
     String cssFontweight="font-weight";
-
-
     String regularColorStartPage="rgba(119, 119, 119, 1)";
     String compaignColorStartPage="rgba(204, 0, 0, 1)";
     String regularColorProductdetailstPage="rgba(102, 102, 102, 1)";
     String compaignColorProductDetailsPage="rgba(204, 0, 0, 1)";
     String reqularFont="line-through";
     String compaignFont="bold";
+
     By allCompaingsProductNames=By.xpath("//div[@id='box-campaigns']/div[@class='content']/ul/li//div[@class='name']");
     By productNameDetailsPage=By.xpath("//div[@id='box-product']//h1[@class='title']");
     By regularPricesCompaingsProducts=By.xpath("//div[@id='box-campaigns']/div[@class='content']/ul/li//s[@class='regular-price']");
@@ -101,8 +98,6 @@ public class task05_02 {
         return res;
     }
 
-
-
     public void checkProduct(String name, String regPrice, String campPrice){
         listResults.add(isProductOk(name, driver.findElements(productNameDetailsPage).get(0).getText()));
         listResults.add(isProductOk(regPrice, driver.findElements(regularPrices).get(0).getText()));
@@ -121,8 +116,8 @@ public class task05_02 {
         listResults.add(isHeigthOk(driver.findElements(regularPrice).get(0),heightRegularPriceStartPage));
         listResults.add(isHeigthOk(driver.findElements(campaingPrice).get(0),heightCompaingPriceStartPage));
 
-
     }
+
     public void checkAllPropertiesProductDetailsPage(By regularPrice, By campaingPrice){
 
         listResults.add(isStyleOk(driver.findElements(regularPrice).get(0),cssColor,regularColorProductdetailstPage));
