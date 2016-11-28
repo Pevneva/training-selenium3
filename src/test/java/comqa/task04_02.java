@@ -39,14 +39,9 @@ public class task04_02 {
             driver.get("http://localhost:70/litecart/en/");
             wait.until(titleIs(startTitle));
 
-            List<WebElement> mostPopular = driver.findElements(allMostPopularProducts);
-            int amountMostPopular = mostPopular.size();
-
-            List<WebElement> compaings = driver.findElements(allCompaingsProducts);
-            int amountCompaings = compaings.size();
-
-            List<WebElement> latestsProducts = driver.findElements(allLatestsProducts);
-            int amountLatestProducts = latestsProducts.size();
+            int amountMostPopular = driver.findElements(allMostPopularProducts).size();
+            int amountCompaings = driver.findElements(allCompaingsProducts).size();
+            int amountLatestProducts = driver.findElements(allLatestsProducts).size();
 
             for (int i=1;i<=amountMostPopular;i++) {
                 By currentMostPopularProduct=By.xpath("//div[@id='box-most-popular']/div[@class='content']/ul/li["+i+"]/a[@class='link']/div[@class='image-wrapper']/div");
