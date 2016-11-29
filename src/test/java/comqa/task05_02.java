@@ -14,6 +14,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.TreeSet;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 import static org.testng.Assert.assertTrue;
 
@@ -36,7 +37,6 @@ public class task05_02 {
 
     String startPage="http://localhost:70/litecart";
     String titleStartPage="Online Store | My Store";
-    String titleFirstCompaingProductDetailsPage="Yellow Duck | Subcategory | Rubber Ducks | My Store";
     String cssColor="color";
     String cssTextdecoration="text-decoration";
     String cssFontweight="font-weight";
@@ -48,6 +48,7 @@ public class task05_02 {
     String compaignFont="bold";
 
     By allCompaingsProductNames=By.xpath("//div[@id='box-campaigns']/div[@class='content']/ul/li//div[@class='name']");
+    By productDetailsPage=By.xpath("//div[@id='box-product']");
     By productNameDetailsPage=By.xpath("//div[@id='box-product']//h1[@class='title']");
     By regularPricesCompaingsProducts=By.xpath("//div[@id='box-campaigns']/div[@class='content']/ul/li//s[@class='regular-price']");
     By compaignPricesCompaingsProducts=By.xpath("//div[@id='box-campaigns']/div[@class='content']/ul/li//strong[@class='campaign-price']");
@@ -75,7 +76,7 @@ public class task05_02 {
         String regularPrice=driver.findElements(regularPricesCompaingsProducts).get(0).getText();
         String campaingPrice=driver.findElements(compaignPricesCompaingsProducts).get(0).getText();
 
-        openFirtsProductCampaingSection(driver.findElements(compaignPricesCompaingsProducts).get(0),titleFirstCompaingProductDetailsPage);
+        openFirtsProductCampaingSection(driver.findElements(compaignPricesCompaingsProducts).get(0),productDetailsPage);
         checkAllPropertiesProductDetailsPage(regularPrices, compaignPrices);
         checkProduct(productName, regularPrice, campaingPrice );
         assertTrue(isAllresultsOk(listResults));
@@ -166,9 +167,9 @@ public class task05_02 {
         wait.until(titleIs(title));
     }
 
-    private void openFirtsProductCampaingSection(WebElement el, String title) {
+    private void openFirtsProductCampaingSection(WebElement el, By by) {
         el.click();
-        wait.until(titleIs(title));
+        wait.until(presenceOfElementLocated(by));
     }
 
     @AfterClass
