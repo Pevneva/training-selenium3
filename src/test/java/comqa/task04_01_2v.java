@@ -25,8 +25,8 @@ public class task04_01_2v {
     By passwordFieldField=By.name("password");
     By loginButton=By.name("login");
     By headerOnPage=By.xpath("//td[@id='content']/h1");
-
-    By allLeftMenuFirstLevel=By.xpath("//ul[@id='box-apps-menu']/li");
+    By allLeftMenuFirstLevel=By.xpath("//ul[@id='box-apps-menu']/li/a/span[@class='name']");
+    By allLeftMenuSecondLevel2=By.xpath("//ul[@id='box-apps-menu']/li/ul/li/a/span[@class='name']");
 
     String startTitle="My Store";
     String startUrl="http://localhost:70/litecart/admin";
@@ -34,51 +34,43 @@ public class task04_01_2v {
     @Test
     public void testOpenAllLeftMenu()  {
 
-        try{
+        testAllLeftMenu(allLeftMenuFirstLevel, allLeftMenuSecondLevel2, headerOnPage);
 
-            List<WebElement> listMenu1 = driver.findElements(allLeftMenuFirstLevel);
-            int amountMenu1 = listMenu1.size();
-            System.out.println("The amount of the first menu: " + amountMenu1);
+    }
 
-            for (int i=1;i<=amountMenu1;i++) {
-                By actualMenuFirstLevel=By.xpath("//ul[@id='box-apps-menu']/li["+i+"]/a/span[@class='name']");
+    public void testAllLeftMenu(By locatorAllMenuFirstLevel, By locatorAllMenuSecondLevel, By locatorHeader){
 
-                System.out.println("==================================================================================");
-                System.out.println(i + ": '" + driver.findElement(actualMenuFirstLevel).getText()+"';");
+        for (int i=0;i<driver.findElements(locatorAllMenuFirstLevel).size();i++) {
+            checkHeader(i,locatorAllMenuFirstLevel,locatorHeader);
+            clickMenuFirstLevel(i);
+            testAllSecondLevelMenu(locatorAllMenuSecondLevel);
+        }
+    }
 
-                if (i>1) {
-                    WebElement headerElement = driver.findElement(headerOnPage);
-                    driver.findElement(actualMenuFirstLevel).click();
-                    wait.until(ExpectedConditions.stalenessOf(headerElement));
-                    wait.until(presenceOfElementLocated(headerOnPage));
-                } else {
-                    driver.findElement(actualMenuFirstLevel).click();
-                    wait.until(presenceOfElementLocated(headerOnPage));
-                }
+    public void checkHeader(int menuNumber, By locatorAllMenuFirstLevel, By locatorHeader){
+        if (menuNumber>1) {
+            WebElement headerElement = driver.findElement(locatorHeader);
+            driver.findElements(locatorAllMenuFirstLevel).get(menuNumber).click();
+            wait.until(ExpectedConditions.stalenessOf(headerElement));
+            wait.until(presenceOfElementLocated(locatorHeader));
+        } else {
+            driver.findElements(locatorAllMenuFirstLevel).get(menuNumber).click();
+            wait.until(presenceOfElementLocated(locatorHeader));
+        }
+    }
 
-                By allLeftMenuSecondLevel=By.xpath("//ul[@id='box-apps-menu']/li["+i+"]/ul/li");
-                List<WebElement> listMenu2 = driver.findElements(allLeftMenuSecondLevel);
-                int amountMenu2 = listMenu2.size();
+    public void clickMenuFirstLevel(int numberMenu){
+        driver.findElements(allLeftMenuFirstLevel).get(numberMenu).click();
+        wait.until(presenceOfElementLocated(headerOnPage));
+    }
 
-                System.out.println("The amount of the second menu: " + amountMenu2);
-
-                if (amountMenu2>0) {
-                    wait.until(presenceOfElementLocated(By.xpath("//ul[@id='box-apps-menu']/li["+i+"]/ul")));
-                    for (int j = 1; j <= amountMenu2; j++) {
-
-                        By actualMenuSecondLevel = By.xpath("//ul[@id='box-apps-menu']/li[" + i + "]/ul/li[" + j + "]/a/span[@class='name']");
-                        driver.findElement(actualMenuSecondLevel).click();
-                        wait.until(presenceOfElementLocated(headerOnPage));
-
-                        System.out.println(i + "-" + j +": '"+ driver.findElement(actualMenuSecondLevel).getText()+"';");
-                    }
-                    System.out.println("==================================================================================");
-                }
+    public void testAllSecondLevelMenu(By locatorAllMenuSecondLevel){
+        if (driver.findElements(locatorAllMenuSecondLevel).size()>0) {
+            wait.until(presenceOfElementLocated(headerOnPage));
+            for (int j = 0; j < driver.findElements(locatorAllMenuSecondLevel).size(); j++) {
+                driver.findElements(locatorAllMenuSecondLevel).get(j).click();
+                wait.until(presenceOfElementLocated(headerOnPage));
             }
-
-        Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
 
     }
@@ -98,11 +90,6 @@ public class task04_01_2v {
     public void start() {
         //driver = new FirefoxDriver();
         driver = new ChromeDriver();
-
-        //   DesiredCapabilities caps=new DesiredCapabilities();
-        //    caps.setCapability(FirefoxDriver.MARIONETTE,false);
-        //    driver = new FirefoxDriver(caps);
-
         wait = new WebDriverWait(driver, 10);
     }
 
