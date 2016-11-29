@@ -61,8 +61,6 @@ public class task06_01 {
     String testDesiredPassword="test12345!";
     String testConfirmPassword="test12345!";
 
-    List<Boolean> listResults=new ArrayList<Boolean>();
-
     @BeforeClass
     public void start() {
         //driver = new FirefoxDriver();
