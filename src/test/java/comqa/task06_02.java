@@ -1,18 +1,9 @@
 package comqa;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.TreeSet;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 import static org.testng.Assert.assertTrue;
@@ -20,155 +11,212 @@ import static org.testng.Assert.assertTrue;
 /**
  * Created by tigra on 16.11.2016.
  */
-public class task06_02 {
 
-    private WebDriver driver;
-    private WebDriverWait wait;
+public class task06_02 extends TestBase {
 
-    By usernameField=By.name("username");
-    By passwordFieldField=By.name("password");
-    By loginButton=By.name("login");
-    By allCountries=By.xpath("//table[@class='dataTable']/tbody/tr/td[5]/a");
-    By allZones=By.xpath("//table[@class='dataTable']/tbody/tr/td[6]");
-    By allZonesEditCountryPage=By.xpath("//table[@id='table-zones']/tbody/tr/td[3]");
-    By allCountriesGeo=By.xpath("//table[@class='dataTable']//tr/td[3]/a");
-    By allZonesEditGeoZonePage=By.xpath("//table[@id='table-zones']//tr/td[3]/select/option[@selected='selected']");
-    String startUrl="http://localhost:70/litecart/admin";
-    String urlContries="http://localhost:70/litecart/admin/?app=countries&doc=countries";
-    String urlZones="http://localhost:70/litecart/admin/?app=geo_zones&doc=geo_zones";
-    String startTitle="My Store";
-    String countriesTitle="Countries | My Store";
-    String zonesTitle="Geo Zones | My Store";
-    String editCountriesTitle="Edit Country | My Store";
-    String editZonesTitle="Edit Geo Zone | My Store";
-    String countriesAttribute="innerText";
-    String zonesAttribute="textContent";
-    List<Boolean> listResults=new ArrayList<Boolean>();
+    String startUrl = "http://localhost:70/litecart";
+    String startAdminUrl = "http://localhost:70/litecart/admin";
+    String startTitle = "My Store";
 
-    @BeforeClass
-    public void start() {
-        //driver = new FirefoxDriver();
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, 10);
-    }
+    By usernameField = By.name("username");
+    By passwordFieldField = By.name("password");
+    By loginButton = By.name("login");
+    By catalogMenu=By.xpath("//div[@id='box-apps-menu-wrapper']//a[contains(@href,'app=catalog&doc=catalog')]");
+    By addNewProductButton=By.xpath("//a[@class='button'][contains(@href,'edit_product')]");
+    By enableStatusRadioButton=By.xpath("//div[@id='tab-general']//label[contains(text(),'Enabled')]/input");
+    By disableStatusRadioButton=By.xpath("//div[@id='tab-general']//label[contains(text(),'Disabled')]/input");
+    By nameField=By.name("name[en]");
+    By codeField=By.name("code");
+    By allCategoryNames=By.xpath("//div[@id='tab-general']//strong[contains(text(),'Categories')]/following-sibling::div//tr/td[2]");
+    By allCategoryCheckboxes=By.xpath("//div[@id='tab-general']//strong[contains(text(),'Categories')]/following-sibling::div//input[@type='checkbox']");
+
+    By allGenderNames=By.xpath("//div[@id='tab-general']//strong[contains(text(),'Product Groups')]/following-sibling::div//tr/td[2]");
+    By allGenderCheckboxes=By.xpath("//div[@id='tab-general']//strong[contains(text(),'Product Groups')]/following-sibling::div//input[@type='checkbox']");
+
+    By defaultCategorySelectBox=By.name("default_category_id");
+    By defaultCategorySelectBoxOptions=By.xpath("//*[@name='default_category_id']/option");
+
+    By quantityField=By.name("quantity");
+    By quntityunitSelectBox=By.name("quantity_unit_id");
+    By quntityunitSelectBoxOptions=By.xpath("//*[@name='quantity_unit_id']/option");
+    By deliverystatusSelectBox=By.name("delivery_status_id");
+    By deliverystatusSelectBoxOptions=By.xpath("//*[@name='delivery_status_id']/option");
+    By soldoutstatusSelectBox=By.name("sold_out_status_id");
+    By soldoutstatusSelectBoxOptions=By.xpath("//*[@name='sold_out_status_id']/option");
+
+    By uploadimageInput=By.name("new_images[]");
+    By dateValidFromField=By.name("date_valid_from");
+    By dateValidToField=By.name("date_valid_to");
+
+    By informationTabLink=By.xpath("//a[@href='#tab-information']");
+    By manufacturerSelectBox=By.name("manufacturer_id");
+    By manufacturerSelectBoxOptions=By.xpath("//*[@name='manufacturer_id']/option");
+    By supplierSelectBox=By.name("supplier_id");
+    By supplierSelectBoxOptions=By.xpath("//*[@name='supplier_id']/option");
+    By keywordField=By.name("keywords");
+    By shortdescriptionField=By.name("short_description[en]");
+    By descriptionField=By.xpath("//div[@class='trumbowyg-editor']");
+    By headtitleField=By.name("head_title[en]");
+    By metsdescriptionField=By.name("meta_description[en]");
+
+    By priceTabLink=By.xpath("//a[@href='#tab-prices']");
+
+    By purchasepriceField=By.name("purchase_price");
+    By purchasepriceSelectBox=By.name("purchase_price_currency_code");
+    By purchasepriceSelectBoxOptions=By.xpath("//*[@name='purchase_price_currency_code']/option");
+    By priceUSDField=By.name("prices[USD]");
+    By priceEURField=By.name("prices[EUR]");
+
+    By saveButton=By.name("save");
+
+    By allProducts=By.xpath("//table[@class='dataTable']//td[3]/a[contains(@href,'product_id')]");
 
 
     @Test
-    public void testSortingOfCountries_1()  {
+    public void testCreatingProduct() {
+
+        loginToAdminApp();
+        createNewProduct();
+        assertTrue(isExistsProduct("Product Test 02"));
+
+    }
+
+    public void createNewProduct(){
+
+        driver.findElement(catalogMenu).click();
+        driver.findElement(addNewProductButton).click();
+        driver.findElement(enableStatusRadioButton).click();
+        driver.findElement(nameField).sendKeys("Product Test 02");
+        driver.findElement(codeField).sendKeys("Code Test 01");
+
+        setCategoryEditProductPage("Subcategory");
+
+        selectValueInSelectbox(defaultCategorySelectBox,defaultCategorySelectBoxOptions,"Subcategory");
+        setGenderEditProductPage("Male");
+        setGenderEditProductPage("Unisex");
+
+        driver.findElement(quantityField).clear();
+        driver.findElement(quantityField).sendKeys("15");
+
+        selectValueInSelectbox(quntityunitSelectBox,quntityunitSelectBoxOptions,"pcs");
+        selectValueInSelectbox(deliverystatusSelectBox,deliverystatusSelectBoxOptions,"3-5 days");
+        selectValueInSelectbox(soldoutstatusSelectBox,soldoutstatusSelectBoxOptions,"Sold out");
+
+        driver.findElement(uploadimageInput).sendKeys("e:\\WORK\\Pictures\\Koala.jpg");
+
+        driver.findElement(dateValidFromField).click();
+        setDateTodateFiled("31","12","2016");
+        driver.findElement(dateValidToField).click();
+        setDateTodateFiled("01","06","2017");
+
+        driver.findElement(informationTabLink).click();
+
+        selectValueInSelectbox(manufacturerSelectBox,manufacturerSelectBoxOptions,"ACME Corp.");
+
+        driver.findElement(keywordField).sendKeys("test keywords");
+        driver.findElement(shortdescriptionField).sendKeys("test short description");
+
+        fillDescriptionField("test description !!!");
+
+        driver.findElement(headtitleField).sendKeys("test head title");
+        driver.findElement(metsdescriptionField).sendKeys("test meta description");
+
+        driver.findElement(priceTabLink).click();
+        driver.findElement(purchasepriceField).click();
+        driver.findElement(purchasepriceField).clear();
+        driver.findElement(purchasepriceField).sendKeys("222");
+
+        selectValueInSelectbox(purchasepriceSelectBox,purchasepriceSelectBoxOptions,"US Dollars");
+
+        driver.findElement(priceUSDField).sendKeys("130");
+        driver.findElement(priceEURField).sendKeys("100");
+
+        driver.findElement(saveButton).click();
+
+    }
+
+   public boolean isExistsProduct(String productName){
+       boolean result=false;
+       for (int i=0;i<driver.findElements(allProducts).size();i++){
+           if (driver.findElements(allProducts).get(i).getText().equals(productName)){
+               result=true;
+           }
+       }
+       return result;
+   }
+
+    public void fillDescriptionField(String text){
+        driver.findElement(descriptionField).click();
+        WebElement test=driver.findElement(descriptionField);
+
+        JavascriptExecutor js = null;
+        if (driver instanceof JavascriptExecutor) {
+            js = (JavascriptExecutor)driver;
+        }
+
+       js.executeScript("return document.getElementsByClassName('trumbowyg-editor')[0].textContent='"+text+"'");
+       new Actions(driver)
+                .sendKeys(Keys.HOME)
+                .perform();
+    }
+
+    public void setDateTodateFiled(String dd, String mm, String yyyy){
+       new Actions(driver)
+               .sendKeys(Keys.HOME)
+               .perform();
+
+       new Actions(driver)
+               .sendKeys(yyyy)
+               .sendKeys(Keys.ARROW_LEFT)
+               .perform();
+
+       new Actions(driver)
+               .sendKeys(dd)
+               .sendKeys(Keys.ARROW_LEFT)
+               .sendKeys(Keys.ARROW_LEFT)
+               .perform();
 
 
-        try {
-            login();
-            listResults.clear();
-            driver.get(urlContries);
-            wait.until(titleIs(countriesTitle));
+       new Actions(driver)
+               .sendKeys(mm)
+               .sendKeys(Keys.ESCAPE)
+               .perform();
+   }
 
-            List<WebElement> listContries = driver.findElements(allCountries);
-            checkSortingAndPrintIfError(listContries, countriesAttribute);
-
-            List<WebElement> listZones=driver.findElements(allZones);
-
-            for (int i=0;i<listZones.size();i++){
-                int j = Integer.parseInt(listZones.get(i).getAttribute(countriesAttribute));
-                if (j>0) {
-                    listContries.get(i).click();
-                    wait.until(titleIs(editCountriesTitle));
-                    List<WebElement> listZonesCountryEditPage=driver.findElements(allZonesEditCountryPage);
-                    listZonesCountryEditPage.remove(listZonesCountryEditPage.size()-1);
-
-                    checkSortingAndPrintIfError(listZonesCountryEditPage, countriesAttribute);
-
-                    driver.navigate().back();
-                    wait.until(titleIs(countriesTitle));
-                    listZones=driver.findElements(allZones);
-                    listContries = driver.findElements(allCountries);
-
-                }
+    public void setCategoryEditProductPage(String categoryName){
+        for (int i=1; i<driver.findElements(allCategoryNames).size();i++){
+            if (driver.findElements(allCategoryNames).get(i).getText().equals(categoryName)){
+                driver.findElements(allCategoryCheckboxes).get(i).click();
             }
-            assertTrue(isAllresultsOk(listResults));
-        } catch (NumberFormatException e) {
-            System.out.println("No all data were sorted!");
-
-            e.printStackTrace();
         }
+
     }
 
-    @Test
-    public void testSortingOfZones_2() {
-
-        try {
-        login();
-        listResults.clear();
-        driver.get(urlZones);
-        wait.until(titleIs(zonesTitle));
-        List<WebElement> listCountriesGeo = driver.findElements(allCountriesGeo);
-        for (int i = 0; i < listCountriesGeo.size(); i++) {
-            listCountriesGeo.get(i).click();
-            wait.until(titleIs(editZonesTitle));
-            List<WebElement> listZones = driver.findElements(allZonesEditGeoZonePage);
-            checkSortingAndPrintIfError(listZones, zonesAttribute);
-            driver.navigate().back();
-            listCountriesGeo = driver.findElements(allCountriesGeo);
-            assertTrue(isAllresultsOk(listResults));
-            }
-        } catch (NumberFormatException e) {
-            System.out.println("No all data were sorted!");
-
-            e.printStackTrace();
-        }
-    }
-
-
-    public boolean isAllresultsOk(List<Boolean> list){
-        boolean result=true;
-        for (int i=0;i<list.size();i++){
-            result = result&list.get(i);
-        }
-        return result;
-    }
-
-    public void checkSortingAndPrintIfError(List<WebElement> list, String attrName){
-        boolean res = isSorted(list, attrName);
-        listResults.add(res);
-        if (!res) {
-            System.out.println("The data have not been sorted on the page:");
-            System.out.println(driver.getCurrentUrl());
-
-        }
-    }
-
-    public boolean isSorted(List<WebElement> list, String attName){
-        TreeSet <String>tree = new TreeSet<String>();
-        for (int i=0;i<list.size();i++){
-            tree.add(list.get(i).getAttribute(attName));
-        }
-        Iterator it=tree.iterator();
-        boolean myResult=false;
-        while (it.hasNext()) {
-            for (int i=0;i<list.size();i++){
-                    myResult=list.get(i).getAttribute(attName).equals(it.next());
+    public void setGenderEditProductPage(String genderName){
+        for (int i=0; i<driver.findElements(allGenderNames).size();i++){
+            if (driver.findElements(allGenderNames).get(i).getText().equals(genderName)){
+                driver.findElements(allGenderCheckboxes).get(i).click();
             }
         }
-        return myResult;
 
     }
 
+    public void selectValueInSelectbox(By bySelectBox, By bySelectBoxOptions, String value){
+        driver.findElement(bySelectBox).click();
+        for (int i=0;i<driver.findElements(bySelectBoxOptions).size();i++){
+            if (driver.findElements(bySelectBoxOptions).get(i).getText().equals(value)){
+                driver.findElements(bySelectBoxOptions).get(i).click();
+            }
+        }
+    }
 
-    public void login(){
-        driver.get(startUrl);
-        if (driver.findElements(loginButton).size()>0) {
+    public void loginToAdminApp() {
+        driver.get(startAdminUrl);
+        if (driver.findElements(loginButton).size() > 0) {
             driver.findElement(usernameField).sendKeys("admin");
             driver.findElement(passwordFieldField).sendKeys("admin");
             driver.findElement(loginButton).click();
             wait.until(titleIs(startTitle));
         }
-    }
-
-
-    @AfterClass
-    public void stop(){
-        driver.quit();
-        driver = null;
-
     }
 }
