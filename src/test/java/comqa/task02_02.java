@@ -27,15 +27,15 @@ public class task02_02 {
     }
 
     @Test
-    public void testTempExample()  {
+    public void testTempExample() {
 
-        try{
-        driver.get("http://localhost:70/litecart/admin/");
-        driver.findElement(By.name("username")).sendKeys("admin");
-        driver.findElement(By.name("password")).sendKeys("admin");
-        driver.findElement(By.name("login")).click();
-        wait.until(titleIs("My Store"));
-        Thread.sleep(3000);
+        try {
+            driver.get("http://localhost:70/litecart/admin/");
+            driver.findElement(By.name("username")).sendKeys("admin");
+            driver.findElement(By.name("password")).sendKeys("admin");
+            driver.findElement(By.name("login")).click();
+            wait.until(titleIs("My Store"));
+            Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -43,7 +43,7 @@ public class task02_02 {
     }
 
     @AfterTest
-    public void stop(){
+    public void stop() {
         driver.quit();
         driver = null;
 

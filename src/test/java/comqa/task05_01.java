@@ -25,25 +25,25 @@ public class task05_01 {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    By usernameField=By.name("username");
-    By passwordFieldField=By.name("password");
-    By loginButton=By.name("login");
-    By allCountries=By.xpath("//table[@class='dataTable']/tbody/tr/td[5]/a");
-    By allZones=By.xpath("//table[@class='dataTable']/tbody/tr/td[6]");
-    By allZonesEditCountryPage=By.xpath("//table[@id='table-zones']/tbody/tr/td[3]");
-    By allCountriesGeo=By.xpath("//table[@class='dataTable']//tr/td[3]/a");
-    By allZonesEditGeoZonePage=By.xpath("//table[@id='table-zones']//tr/td[3]/select/option[@selected='selected']");
-    String startUrl="http://localhost:70/litecart/admin";
-    String urlContries="http://localhost:70/litecart/admin/?app=countries&doc=countries";
-    String urlZones="http://localhost:70/litecart/admin/?app=geo_zones&doc=geo_zones";
-    String startTitle="My Store";
-    String countriesTitle="Countries | My Store";
-    String zonesTitle="Geo Zones | My Store";
-    String editCountriesTitle="Edit Country | My Store";
-    String editZonesTitle="Edit Geo Zone | My Store";
-    String countriesAttribute="innerText";
-    String zonesAttribute="textContent";
-    List<Boolean> listResults=new ArrayList<Boolean>();
+    By usernameField = By.name("username");
+    By passwordFieldField = By.name("password");
+    By loginButton = By.name("login");
+    By allCountries = By.xpath("//table[@class='dataTable']/tbody/tr/td[5]/a");
+    By allZones = By.xpath("//table[@class='dataTable']/tbody/tr/td[6]");
+    By allZonesEditCountryPage = By.xpath("//table[@id='table-zones']/tbody/tr/td[3]");
+    By allCountriesGeo = By.xpath("//table[@class='dataTable']//tr/td[3]/a");
+    By allZonesEditGeoZonePage = By.xpath("//table[@id='table-zones']//tr/td[3]/select/option[@selected='selected']");
+    String startUrl = "http://localhost:70/litecart/admin";
+    String urlContries = "http://localhost:70/litecart/admin/?app=countries&doc=countries";
+    String urlZones = "http://localhost:70/litecart/admin/?app=geo_zones&doc=geo_zones";
+    String startTitle = "My Store";
+    String countriesTitle = "Countries | My Store";
+    String zonesTitle = "Geo Zones | My Store";
+    String editCountriesTitle = "Edit Country | My Store";
+    String editZonesTitle = "Edit Geo Zone | My Store";
+    String countriesAttribute = "innerText";
+    String zonesAttribute = "textContent";
+    List<Boolean> listResults = new ArrayList<Boolean>();
 
     @BeforeClass
     public void start() {
@@ -54,7 +54,7 @@ public class task05_01 {
 
 
     @Test
-    public void testSortingOfCountries_1()  {
+    public void testSortingOfCountries_1() {
 
 
         try {
@@ -66,21 +66,21 @@ public class task05_01 {
             List<WebElement> listContries = driver.findElements(allCountries);
             checkSortingAndPrintIfError(listContries, countriesAttribute);
 
-            List<WebElement> listZones=driver.findElements(allZones);
+            List<WebElement> listZones = driver.findElements(allZones);
 
-            for (int i=0;i<listZones.size();i++){
+            for (int i = 0; i < listZones.size(); i++) {
                 int j = Integer.parseInt(listZones.get(i).getAttribute(countriesAttribute));
-                if (j>0) {
+                if (j > 0) {
                     listContries.get(i).click();
                     wait.until(titleIs(editCountriesTitle));
-                    List<WebElement> listZonesCountryEditPage=driver.findElements(allZonesEditCountryPage);
-                    listZonesCountryEditPage.remove(listZonesCountryEditPage.size()-1);
+                    List<WebElement> listZonesCountryEditPage = driver.findElements(allZonesEditCountryPage);
+                    listZonesCountryEditPage.remove(listZonesCountryEditPage.size() - 1);
 
                     checkSortingAndPrintIfError(listZonesCountryEditPage, countriesAttribute);
 
                     driver.navigate().back();
                     wait.until(titleIs(countriesTitle));
-                    listZones=driver.findElements(allZones);
+                    listZones = driver.findElements(allZones);
                     listContries = driver.findElements(allCountries);
 
                 }
@@ -97,19 +97,19 @@ public class task05_01 {
     public void testSortingOfZones_2() {
 
         try {
-        login();
-        listResults.clear();
-        driver.get(urlZones);
-        wait.until(titleIs(zonesTitle));
-        List<WebElement> listCountriesGeo = driver.findElements(allCountriesGeo);
-        for (int i = 0; i < listCountriesGeo.size(); i++) {
-            listCountriesGeo.get(i).click();
-            wait.until(titleIs(editZonesTitle));
-            List<WebElement> listZones = driver.findElements(allZonesEditGeoZonePage);
-            checkSortingAndPrintIfError(listZones, zonesAttribute);
-            driver.navigate().back();
-            listCountriesGeo = driver.findElements(allCountriesGeo);
-            assertTrue(isAllresultsOk(listResults));
+            login();
+            listResults.clear();
+            driver.get(urlZones);
+            wait.until(titleIs(zonesTitle));
+            List<WebElement> listCountriesGeo = driver.findElements(allCountriesGeo);
+            for (int i = 0; i < listCountriesGeo.size(); i++) {
+                listCountriesGeo.get(i).click();
+                wait.until(titleIs(editZonesTitle));
+                List<WebElement> listZones = driver.findElements(allZonesEditGeoZonePage);
+                checkSortingAndPrintIfError(listZones, zonesAttribute);
+                driver.navigate().back();
+                listCountriesGeo = driver.findElements(allCountriesGeo);
+                assertTrue(isAllresultsOk(listResults));
             }
         } catch (NumberFormatException e) {
             System.out.println("No all data were sorted!");
@@ -119,15 +119,15 @@ public class task05_01 {
     }
 
 
-    public boolean isAllresultsOk(List<Boolean> list){
-        boolean result=true;
-        for (int i=0;i<list.size();i++){
-            result = result&list.get(i);
+    public boolean isAllresultsOk(List<Boolean> list) {
+        boolean result = true;
+        for (int i = 0; i < list.size(); i++) {
+            result = result & list.get(i);
         }
         return result;
     }
 
-    public void checkSortingAndPrintIfError(List<WebElement> list, String attrName){
+    public void checkSortingAndPrintIfError(List<WebElement> list, String attrName) {
         boolean res = isSorted(list, attrName);
         listResults.add(res);
         if (!res) {
@@ -137,16 +137,16 @@ public class task05_01 {
         }
     }
 
-    public boolean isSorted(List<WebElement> list, String attName){
-        TreeSet <String>tree = new TreeSet<String>();
-        for (int i=0;i<list.size();i++){
+    public boolean isSorted(List<WebElement> list, String attName) {
+        TreeSet<String> tree = new TreeSet<String>();
+        for (int i = 0; i < list.size(); i++) {
             tree.add(list.get(i).getAttribute(attName));
         }
-        Iterator it=tree.iterator();
-        boolean myResult=false;
+        Iterator it = tree.iterator();
+        boolean myResult = false;
         while (it.hasNext()) {
-            for (int i=0;i<list.size();i++){
-                    myResult=list.get(i).getAttribute(attName).equals(it.next());
+            for (int i = 0; i < list.size(); i++) {
+                myResult = list.get(i).getAttribute(attName).equals(it.next());
             }
         }
         return myResult;
@@ -154,9 +154,9 @@ public class task05_01 {
     }
 
 
-    public void login(){
+    public void login() {
         driver.get(startUrl);
-        if (driver.findElements(loginButton).size()>0) {
+        if (driver.findElements(loginButton).size() > 0) {
             driver.findElement(usernameField).sendKeys("admin");
             driver.findElement(passwordFieldField).sendKeys("admin");
             driver.findElement(loginButton).click();
@@ -166,7 +166,7 @@ public class task05_01 {
 
 
     @AfterClass
-    public void stop(){
+    public void stop() {
         driver.quit();
         driver = null;
 

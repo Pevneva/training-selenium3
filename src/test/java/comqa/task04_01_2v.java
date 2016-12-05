@@ -21,34 +21,34 @@ public class task04_01_2v {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    By usernameField=By.name("username");
-    By passwordFieldField=By.name("password");
-    By loginButton=By.name("login");
-    By headerOnPage=By.xpath("//td[@id='content']/h1");
-    By allLeftMenuFirstLevel=By.xpath("//ul[@id='box-apps-menu']/li/a/span[@class='name']");
-    By allLeftMenuSecondLevel2=By.xpath("//ul[@id='box-apps-menu']/li/ul/li/a/span[@class='name']");
+    By usernameField = By.name("username");
+    By passwordFieldField = By.name("password");
+    By loginButton = By.name("login");
+    By headerOnPage = By.xpath("//td[@id='content']/h1");
+    By allLeftMenuFirstLevel = By.xpath("//ul[@id='box-apps-menu']/li/a/span[@class='name']");
+    By allLeftMenuSecondLevel2 = By.xpath("//ul[@id='box-apps-menu']/li/ul/li/a/span[@class='name']");
 
-    String startTitle="My Store";
-    String startUrl="http://localhost:70/litecart/admin";
+    String startTitle = "My Store";
+    String startUrl = "http://localhost:70/litecart/admin";
 
     @Test
-    public void testOpenAllLeftMenu()  {
+    public void testOpenAllLeftMenu() {
 
         testAllLeftMenu(allLeftMenuFirstLevel, allLeftMenuSecondLevel2, headerOnPage);
 
     }
 
-    public void testAllLeftMenu(By locatorAllMenuFirstLevel, By locatorAllMenuSecondLevel, By locatorHeader){
+    public void testAllLeftMenu(By locatorAllMenuFirstLevel, By locatorAllMenuSecondLevel, By locatorHeader) {
 
-        for (int i=0;i<driver.findElements(locatorAllMenuFirstLevel).size();i++) {
-            checkHeader(i,locatorAllMenuFirstLevel,locatorHeader);
+        for (int i = 0; i < driver.findElements(locatorAllMenuFirstLevel).size(); i++) {
+            checkHeader(i, locatorAllMenuFirstLevel, locatorHeader);
             clickMenuFirstLevel(i);
             testAllSecondLevelMenu(locatorAllMenuSecondLevel);
         }
     }
 
-    public void checkHeader(int menuNumber, By locatorAllMenuFirstLevel, By locatorHeader){
-        if (menuNumber>1) {
+    public void checkHeader(int menuNumber, By locatorAllMenuFirstLevel, By locatorHeader) {
+        if (menuNumber > 1) {
             WebElement headerElement = driver.findElement(locatorHeader);
             driver.findElements(locatorAllMenuFirstLevel).get(menuNumber).click();
             wait.until(ExpectedConditions.stalenessOf(headerElement));
@@ -59,13 +59,13 @@ public class task04_01_2v {
         }
     }
 
-    public void clickMenuFirstLevel(int numberMenu){
+    public void clickMenuFirstLevel(int numberMenu) {
         driver.findElements(allLeftMenuFirstLevel).get(numberMenu).click();
         wait.until(presenceOfElementLocated(headerOnPage));
     }
 
-    public void testAllSecondLevelMenu(By locatorAllMenuSecondLevel){
-        if (driver.findElements(locatorAllMenuSecondLevel).size()>0) {
+    public void testAllSecondLevelMenu(By locatorAllMenuSecondLevel) {
+        if (driver.findElements(locatorAllMenuSecondLevel).size() > 0) {
             wait.until(presenceOfElementLocated(headerOnPage));
             for (int j = 0; j < driver.findElements(locatorAllMenuSecondLevel).size(); j++) {
                 driver.findElements(locatorAllMenuSecondLevel).get(j).click();
@@ -76,9 +76,9 @@ public class task04_01_2v {
     }
 
     @BeforeMethod
-    public void mayBeLogin(){
+    public void mayBeLogin() {
         driver.get(startUrl);
-        if (driver.findElements(loginButton).size()>0) {
+        if (driver.findElements(loginButton).size() > 0) {
             driver.findElement(usernameField).sendKeys("admin");
             driver.findElement(passwordFieldField).sendKeys("admin");
             driver.findElement(loginButton).click();
@@ -94,7 +94,7 @@ public class task04_01_2v {
     }
 
     @AfterTest
-    public void stop(){
+    public void stop() {
         driver.quit();
         driver = null;
     }

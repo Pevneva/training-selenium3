@@ -201,14 +201,7 @@ public class task06_02 extends TestBase {
 
     }
 
-    public void selectValueInSelectbox(By bySelectBox, By bySelectBoxOptions, String value){
-        driver.findElement(bySelectBox).click();
-        for (int i=0;i<driver.findElements(bySelectBoxOptions).size();i++){
-            if (driver.findElements(bySelectBoxOptions).get(i).getText().equals(value)){
-                driver.findElements(bySelectBoxOptions).get(i).click();
-            }
-        }
-    }
+
 
     public void loginToAdminApp() {
         driver.get(startAdminUrl);

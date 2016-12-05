@@ -1,4 +1,4 @@
-package comqa.testpo.task_06_01.model;
+package comqa.models;
 
 /**
  * Created by tigra on 30.11.2016.

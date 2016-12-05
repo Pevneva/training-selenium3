@@ -1,14 +1,9 @@
-package comqa.testpo.task_06_01.pages;
+package comqa.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import comqa.testpo.task_06_01.model.User;
-
-
-import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
-import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
+import comqa.models.User;
 
 /**
  * Created by tigra on 16.11.2016.
@@ -18,41 +13,41 @@ public class CreateAccountPage {
     private WebDriver driver;
     private WebDriverWait wait;
 
-    String startPage="http://localhost:70/litecart";
-    String titleStartPage="Online Store | My Store";
-    String titleCreateAccountPage="Create Account | My Store";
+    String startPage = "http://localhost:70/litecart";
+    String titleStartPage = "Online Store | My Store";
+    String titleCreateAccountPage = "Create Account | My Store";
 
-    By newAccountLink=By.xpath("//div[@id='box-account-login']//a[contains(@href,'create_account')]");
-    By logoutLink=By.xpath("//div[@id='box-account']//a[contains(@href,'logout')]");
-    By emailAddressField=By.name("email");
-    By passwordField=By.name("password");
-    By loginButon=By.name("login");
+    By newAccountLink = By.xpath("//div[@id='box-account-login']//a[contains(@href,'create_account')]");
+    By logoutLink = By.xpath("//div[@id='box-account']//a[contains(@href,'logout')]");
+    By emailAddressField = By.name("email");
+    By passwordField = By.name("password");
+    By loginButon = By.name("login");
 
-    By taxidFieldCreateAccountPage=By.name("tax_id");
-    By companyFieldCreateAccountPage=By.name("company");
-    By firstnameFieldCreateAccountPage=By.name("firstname");
-    By lastnameFieldCreateAccountPage=By.name("lastname");
-    By address1FieldCreateAccountPage=By.name("address1");
-    By address2FieldCreateAccountPage=By.name("address2");
-    By postcodeFieldCreateAccountPage=By.name("postcode");
-    By cityFieldCreateAccountPage=By.name("city");
-    By emailFieldCreateAccountPage=By.name("email");
-    By phoneFieldCreateAccountPage=By.name("phone");
-    By desiredPasswordFieldCreateAccountPage=By.name("password");
-    By confirmPasswordFieldCreateAccountPage=By.name("confirmed_password");
-    By createAccountButtonCreateAccountPage=By.name("create_account");
+    By taxidFieldCreateAccountPage = By.name("tax_id");
+    By companyFieldCreateAccountPage = By.name("company");
+    By firstnameFieldCreateAccountPage = By.name("firstname");
+    By lastnameFieldCreateAccountPage = By.name("lastname");
+    By address1FieldCreateAccountPage = By.name("address1");
+    By address2FieldCreateAccountPage = By.name("address2");
+    By postcodeFieldCreateAccountPage = By.name("postcode");
+    By cityFieldCreateAccountPage = By.name("city");
+    By emailFieldCreateAccountPage = By.name("email");
+    By phoneFieldCreateAccountPage = By.name("phone");
+    By desiredPasswordFieldCreateAccountPage = By.name("password");
+    By confirmPasswordFieldCreateAccountPage = By.name("confirmed_password");
+    By createAccountButtonCreateAccountPage = By.name("create_account");
 
-    public CreateAccountPage(WebDriver driver){
+    public CreateAccountPage(WebDriver driver) {
         this.driver = driver;
     }
 
-     public void login(String emailAddress, String password){
+    public void login(String emailAddress, String password) {
         setEmailLogin(emailAddress);
         setPassword(password);
         clickLoginButton();
     }
 
-    public void createAccount(User user){
+    public void createAccount(User user) {
         clickNewAccountLink(newAccountLink);
         setTaxid(user.getTaxid());
         setCompany(user.getCompany());
@@ -125,22 +120,22 @@ public class CreateAccountPage {
         driver.findElement(confirmPasswordFieldCreateAccountPage).sendKeys(password);
     }
 
-    public void clickLoginButton(){
+    public void clickLoginButton() {
         driver.findElement(loginButon).click();
 //        wait.until(presenceOfElementLocated(logoutLink));
     }
 
-    public void clickLogoutLink(){
+    public void clickLogoutLink() {
         driver.findElement(logoutLink).click();
 //        wait.until(presenceOfElementLocated(newAccountLink));
     }
 
-    public void clickCreateAccountButton(By createAccountButtonLocator){
+    public void clickCreateAccountButton(By createAccountButtonLocator) {
         driver.findElement(createAccountButtonLocator).click();
 //        wait.until(titleIs(titleStartPage));
     }
 
-    public void clickNewAccountLink(By newAccountLinkLocator){
+    public void clickNewAccountLink(By newAccountLinkLocator) {
         driver.findElement(newAccountLinkLocator).click();
 //        wait.until(titleIs(titleCreateAccountPage));
     }

@@ -28,42 +28,42 @@ public class task02_01 {
 
     @BeforeTest
     public void start() {
-    //    DesiredCapabilities caps=new DesiredCapabilities();
-    //    caps.setCapability(FirefoxDriver.MARIONETTE,false);
-     //   driver = new FirefoxDriver(caps);
+        //    DesiredCapabilities caps=new DesiredCapabilities();
+        //    caps.setCapability(FirefoxDriver.MARIONETTE,false);
+        //   driver = new FirefoxDriver(caps);
 
-    //    DesiredCapabilities caps=new DesiredCapabilities();
-    //    driver = new FirefoxDriver(new FirefoxBinary(new File("E:\\Program Files\\Nightly\\firefox.exe")),new FirefoxProfile(),caps);
+        //    DesiredCapabilities caps=new DesiredCapabilities();
+        //    driver = new FirefoxDriver(new FirefoxBinary(new File("E:\\Program Files\\Nightly\\firefox.exe")),new FirefoxProfile(),caps);
 
         //driver = new ChromeDriver();
 
         driver = new InternetExplorerDriver();
 
-  //      DesiredCapabilities caps = new DesiredCapabilities();
-  //      caps.setCapability(InternetExplorerDriver.REQUIRE_WINDOW_FOCUS, true);
-  //      WebDriver driver = new InternetExplorerDriver(caps);
+        //      DesiredCapabilities caps = new DesiredCapabilities();
+        //      caps.setCapability(InternetExplorerDriver.REQUIRE_WINDOW_FOCUS, true);
+        //      WebDriver driver = new InternetExplorerDriver(caps);
 
         System.out.println(((HasCapabilities) driver).getCapabilities());
         wait = new WebDriverWait(driver, 10);
     }
 
     @Test
-    public void testTempExample()  {
-        try{
-        driver.get("http://www.google.com/");
-        driver.findElement(By.name("q")).sendKeys("webdriver");
-        Thread.sleep(10000);
-    //    driver.findElement(By.name("btnK")).click();
-    //    wait.until(titleIs("webdriver - Пошук Google"));
-    //    Thread.sleep(10000);
+    public void testTempExample() {
+        try {
+            driver.get("http://www.google.com/");
+            driver.findElement(By.name("q")).sendKeys("webdriver");
+            Thread.sleep(10000);
+            //    driver.findElement(By.name("btnK")).click();
+            //    wait.until(titleIs("webdriver - Пошук Google"));
+            //    Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
-            }
+        }
 
     }
 
     @AfterTest
-    public void stop(){
+    public void stop() {
         driver.quit();
         driver = null;
 

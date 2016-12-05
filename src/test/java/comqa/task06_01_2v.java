@@ -1,25 +1,17 @@
 package comqa;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
-import static org.testng.Assert.assertTrue;
 
 /**
  * Created by tigra on 16.11.2016.
  */
-public class task06_01 extends TestBase {
+public class task06_01_2v extends TestBase {
 
     //   private WebDriver driver;
     //   private WebDriverWait wait;
