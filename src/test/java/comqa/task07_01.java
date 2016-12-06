@@ -1,22 +1,14 @@
 package comqa;
 
-import com.sun.javafx.fxml.expression.Expression;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.testng.annotations.Test;
-
-import static com.sun.javafx.fxml.expression.Expression.not;
-
-import org.openqa.selenium.support.ui.ExpectedConditions.*;
-
-import java.util.List;
-
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
-import static org.testng.Assert.assertTrue;
+import org.testng.annotations.Test;
+import org.openqa.selenium.support.ui.ExpectedConditions.*;
+import java.util.List;
+//import static ExpectedCondition<java.lang.Boolean> not(ExpectedCondition<?> condition)
+
 
 /**
  * Created by tigra on 16.11.2016.
@@ -106,12 +98,10 @@ public class task07_01 extends TestBase {
         }
 
         driver.findElement(byAddToCartButton).click();
-//        WebElement popup=driver.findElement(byAddingToCartPopup);
-        List<WebElement> popupList = driver.findElements(byAddingToCartPopup);
-        wait.until(visibilityOf(driver.findElement(byAddingToCartPopup)));
-        wait.until(invisibilityOfAllElements(popupList));
-//        wait.until(visibilityOf(popup));
-//        wait.until(not(visibilityOf(popup)));
+
+        WebElement popup=driver.findElement(byAddingToCartPopup);
+        wait.until(visibilityOf(popup));
+        wait.until(ExpectedConditions.stalenessOf(popup));
 
     }
 

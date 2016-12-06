@@ -2,19 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c9e4158-91af-476a-84f4-b0d1925cc2d1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/comqa/testpo/task_06_01/test/task06_01.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comqa/task02_01.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/task02_01.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comqa/task02_02.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/task02_02.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comqa/task04_01.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/task04_01.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comqa/task04_01_2v.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/task04_01_2v.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comqa/task04_02.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/task04_02.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comqa/task05_01.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/task05_01.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comqa/task05_02.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/task05_02.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comqa/task06_01.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/task06_01.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comqa/task06_02.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/task06_02.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/comqa/testpo/task_06_01/model/User.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/models/User.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/test/java/comqa/testpo/task_06_01/pages/CreateAccountPage.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/pages/CreateAccountPage.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comqa/task07_01.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/task07_01.java" />
     </list>
     <ignored path="selenium3.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,12 +61,10 @@
       <file leaf-file-name="task07_01.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/comqa/task07_01.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3520871">
-              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+            <state vertical-scroll-proportion="3.0544465">
+              <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2970#2971#0" expanded="true" />
-                <element signature="e#3028#3029#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -186,8 +173,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -249,6 +234,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -744,24 +731,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="task07_01 - 2016.12.05 at 22h 00m 34s.xml">
-      <configuration name="task07_01" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="task07_01 - 2016.12.05 at 22h 01m 24s.xml">
-      <configuration name="task07_01" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="task07_01 - 2016.12.05 at 22h 03m 00s.xml">
-      <configuration name="task07_01" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="task07_01 - 2016.12.05 at 22h 03m 51s.xml">
-      <configuration name="task07_01" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="task07_01 - 2016.12.05 at 22h 05m 32s.xml">
-      <configuration name="task07_01" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="task07_01 - 2016.12.05 at 22h 06m 28s.xml">
-      <configuration name="task07_01" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="task07_01 - 2016.12.05 at 22h 08m 00s.xml">
       <configuration name="task07_01" configurationId="TestNG" />
     </history-entry>
@@ -774,19 +743,37 @@
     <history-entry file="task07_01 - 2016.12.05 at 22h 24m 22s.xml">
       <configuration name="task07_01" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="task07_01 - 2016.12.06 at 10h 19m 25s.xml">
+      <configuration name="task07_01" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="task07_01 - 2016.12.06 at 10h 19m 45s.xml">
+      <configuration name="task07_01" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="task07_01 - 2016.12.06 at 10h 20m 14s.xml">
+      <configuration name="task07_01" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="task07_01 - 2016.12.06 at 10h 22m 10s.xml">
+      <configuration name="task07_01" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="task07_01 - 2016.12.06 at 10h 23m 43s.xml">
+      <configuration name="task07_01" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="task07_01 - 2016.12.06 at 10h 25m 13s.xml">
+      <configuration name="task07_01" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="55" y="-8" width="1873" height="1096" extended-state="7" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30809128" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30705395" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39937758" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39937758" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2498621" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -852,8 +839,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2970#2971#0" expanded="true" />
-            <element signature="e#3028#3029#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -890,8 +875,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2970#2971#0" expanded="true" />
-            <element signature="e#3028#3029#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1230,12 +1213,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/comqa/task07_01.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3520871">
-          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        <state vertical-scroll-proportion="3.0544465">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2970#2971#0" expanded="true" />
-            <element signature="e#3028#3029#0" expanded="true" />
           </folding>
         </state>
       </provider>
