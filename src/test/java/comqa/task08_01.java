@@ -27,7 +27,7 @@ public class task08_01 extends TestBase {
 
 
     @Test
-    public void testCreatingProduct() {
+    public void testOpenAndCloseNewWindows() {
 
         loginToAdminApp();
         clickOnCountriesMenu();
