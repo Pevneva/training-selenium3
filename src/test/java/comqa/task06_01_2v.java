@@ -53,14 +53,6 @@ public class task06_01_2v extends TestBase {
     String testDesiredPassword = "test12345!";
     String testConfirmPassword = "test12345!";
 
-    //    @BeforeClass
-    public void start() {
-        //driver = new FirefoxDriver();
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, 10);
-
-    }
-
 
     @Test
     public void testFirstProduct() {
@@ -176,10 +168,4 @@ public class task06_01_2v extends TestBase {
         wait.until(titleIs(title));
     }
 
-    //    @AfterClass
-    public void stop() {
-        driver.quit();
-        driver = null;
-
-    }
 }

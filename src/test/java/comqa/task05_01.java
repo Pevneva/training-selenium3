@@ -113,7 +113,6 @@ public class task05_01 {
             }
         } catch (NumberFormatException e) {
             System.out.println("No all data were sorted!");
-
             e.printStackTrace();
         }
     }

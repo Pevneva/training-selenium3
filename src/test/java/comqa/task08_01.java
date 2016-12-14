@@ -14,14 +14,7 @@ import static org.openqa.selenium.support.ui.ExpectedConditions.titleIs;
 
 public class task08_01 extends TestBase {
 
-    String startAdminUrl = "http://localhost:70/litecart/admin";
-    String startTitle = "My Store";
-
-    By usernameField = By.name("username");
-    By passwordFieldField = By.name("password");
-    By loginButton = By.name("login");
-
-    By byCountriesMenu = By.xpath("//span[@class='name'][contains(text(),'Countries')]");
+    By byCountriesMenu = By.xpath("//span[@class='name'][contains(text(),'Countries1')]");
     By byAddNewCountryButton = By.xpath("//a[@class='button'][contains(@href,'edit_country')]");
     By byAllLinksOpenedNewwindow = By.xpath("//a[@target='_blank']");
 
@@ -66,13 +59,4 @@ public class task08_01 extends TestBase {
         driver.findElement(byAddNewCountryButton).click();
     }
 
-    public void loginToAdminApp() {
-        driver.get(startAdminUrl);
-        if (driver.findElements(loginButton).size() > 0) {
-            driver.findElement(usernameField).sendKeys("admin");
-            driver.findElement(passwordFieldField).sendKeys("admin");
-            driver.findElement(loginButton).click();
-            wait.until(titleIs(startTitle));
-        }
-    }
 }

@@ -17,8 +17,6 @@ import java.util.List;
 public class task07_01 extends TestBase {
 
     String startUrl = "http://localhost:70/litecart";
-    String startAdminUrl = "http://localhost:70/litecart/admin";
-    String startTitle = "My Store";
 
     By allProductsOnSearchPage = By.xpath("//div[@id='box-logotypes']/following-sibling::*//div[@class='content']/ul/li/a");
     By bySizeSelectbox = By.xpath("//select[@name='options[Size]']");

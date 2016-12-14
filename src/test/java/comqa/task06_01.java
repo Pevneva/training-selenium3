@@ -1,6 +1,7 @@
 package comqa;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -60,15 +61,6 @@ public class task06_01 extends TestBase {
     String testPhone = "+375295001122";
     String testDesiredPassword = "test12345!";
     String testConfirmPassword = "test12345!";
-
-    //    @BeforeClass
-    public void start() {
-        //driver = new FirefoxDriver();
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver, 10);
-
-    }
-
 
     @Test
     public void testFirstProduct() {
@@ -184,10 +176,4 @@ public class task06_01 extends TestBase {
         wait.until(titleIs(title));
     }
 
-    //    @AfterClass
-    public void stop() {
-        driver.quit();
-        driver = null;
-
-    }
 }
