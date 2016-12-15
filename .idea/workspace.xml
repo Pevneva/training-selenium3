@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c9e4158-91af-476a-84f4-b0d1925cc2d1" name="Default" comment="Added task07_01 test.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comqa/TestBase.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/TestBase.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comqa/task10_01.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/task10_01.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/training-selenium3.iml" afterPath="$PROJECT_DIR$/training-selenium3.iml" />
     </list>
     <ignored path="selenium3.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,7 +28,7 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
@@ -64,21 +60,11 @@
       <file leaf-file-name="task10_01.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/comqa/task10_01.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5405405">
-              <caret line="58" column="70" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="70" />
+            <state vertical-scroll-proportion="1.4440155">
+              <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="task10_02.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/comqa/task10_02.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -762,39 +748,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="task10_01 - 2016.12.15 at 15h 56m 29s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 16h 52m 25s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="task10_01 - 2016.12.15 at 15h 57m 38s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 16h 53m 20s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="task10_01 - 2016.12.15 at 16h 00m 17s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 16h 54m 01s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="task10_01 - 2016.12.15 at 16h 02m 52s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 16h 54m 59s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="task10_01 - 2016.12.15 at 16h 04m 29s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 16h 55m 42s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="task10_01 - 2016.12.15 at 16h 06m 47s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 16h 56m 45s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="task10_01 - 2016.12.15 at 16h 08m 05s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 16h 57m 44s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="task10_01 - 2016.12.15 at 16h 09m 14s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 16h 58m 39s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="task10_01 - 2016.12.15 at 16h 10m 50s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 16h 59m 10s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="task10_01 - 2016.12.15 at 16h 14m 11s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 16h 59m 35s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="-8" width="1873" height="1096" extended-state="7" />
+    <frame x="55" y="-8" width="1873" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1103,6 +1089,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="175" column="46" selection-start-line="175" selection-start-column="46" selection-end-line="175" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1210,14 +1197,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/comqa/task10_02.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/comqa/TestBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1228,10 +1207,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/comqa/task10_02.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.115830116">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/comqa/task10_01.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5405405">
-          <caret line="58" column="70" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="70" />
+        <state vertical-scroll-proportion="1.4440155">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
