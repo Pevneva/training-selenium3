@@ -1,6 +1,9 @@
 package comqa;
 
 import com.google.common.io.Files;
+import net.lightbody.bmp.BrowserMobProxy;
+import net.lightbody.bmp.BrowserMobProxyServer;
+import net.lightbody.bmp.client.ClientUtil;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.logging.LogType;
@@ -33,6 +36,8 @@ public class TestBase {
 
     public EventFiringWebDriver driver;
     public WebDriverWait wait;
+
+    public BrowserMobProxy proxy;
 
     public static class MyListener extends AbstractWebDriverEventListener {
         @Override
@@ -77,7 +82,19 @@ public class TestBase {
 //        logPrefs.enable(LogType.PERFORMANCE, Level.ALL);
 //        cap.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
 
-        driver = new EventFiringWebDriver(new ChromeDriver());
+        proxy = new BrowserMobProxyServer();
+        proxy.start(0);
+        Proxy seleniumProxy = ClientUtil.createSeleniumProxy(proxy);
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+
+        Proxy proxy = new Proxy();
+        proxy.setHttpProxy("localhost:8888");
+        DesiredCapabilities caps = new DesiredCapabilities();
+        caps.setCapability("proxy", proxy);
+//        WebDriver driver = new ChromeDriver(caps);
+
+//        driver = new EventFiringWebDriver(new ChromeDriver());
+        driver = new EventFiringWebDriver(new ChromeDriver(capabilities));
 //        driver = new EventFiringWebDriver(new ChromeDriver(cap));
         driver.register(new MyListener());
         wait = new WebDriverWait(driver, 10);

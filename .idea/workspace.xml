@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="6c9e4158-91af-476a-84f4-b0d1925cc2d1" name="Default" comment="Added task07_01 test.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comqa/TestBase.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/TestBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comqa/task05_01.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/task05_01.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comqa/task06_01.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/task06_01.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comqa/task06_01_2v.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/task06_01_2v.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comqa/task07_01.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/task07_01.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comqa/task08_01.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/task08_01.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/comqa/task10_01.java" afterPath="$PROJECT_DIR$/src/test/java/comqa/task10_01.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/training-selenium3.iml" afterPath="$PROJECT_DIR$/training-selenium3.iml" />
     </list>
     <ignored path="selenium3.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,7 +33,7 @@
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -45,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/java/comqa/TestBase.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="102" column="16" selection-start-line="102" selection-start-column="16" selection-end-line="102" selection-end-column="16" />
+              <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -53,14 +51,34 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="task08_01.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/comqa/task08_01.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="task10_01.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/comqa/task10_01.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.6081081">
-              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.5405405">
+              <caret line="58" column="70" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="task10_02.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/comqa/task10_02.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -128,13 +146,14 @@
         <option value="$PROJECT_DIR$/src/test/java/comqa/pages/EditProductPage.java" />
         <option value="$PROJECT_DIR$/src/test/java/comqa/pages/PageManager.java" />
         <option value="$PROJECT_DIR$/src/test/java/comqa/task06_02.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/comqa/task06_01.java" />
         <option value="$PROJECT_DIR$/src/test/java/comqa/task06_01_2v.java" />
         <option value="$PROJECT_DIR$/src/test/java/comqa/task08_01.java" />
         <option value="$PROJECT_DIR$/src/test/java/comqa/task07_01.java" />
-        <option value="$PROJECT_DIR$/src/test/java/comqa/TestBase.java" />
         <option value="$PROJECT_DIR$/src/test/java/comqa/task05_01.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/comqa/task10_02.java" />
+        <option value="$PROJECT_DIR$/src/test/java/comqa/TestBase.java" />
         <option value="$PROJECT_DIR$/src/test/java/comqa/task10_01.java" />
       </list>
     </option>
@@ -185,6 +204,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -245,9 +265,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -338,39 +357,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="false" name="task08_01" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="comqa.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="training-selenium3" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="comqa" />
-      <option name="MAIN_CLASS_NAME" value="comqa.task08_01" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method />
-    </configuration>
     <configuration default="false" name="task06_01_2v" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -417,6 +403,39 @@
       <option name="SUITE_NAME" />
       <option name="PACKAGE_NAME" value="comqa" />
       <option name="MAIN_CLASS_NAME" value="comqa.task10_01" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method />
+    </configuration>
+    <configuration default="false" name="task10_02" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="comqa.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="training-selenium3" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="comqa" />
+      <option name="MAIN_CLASS_NAME" value="comqa.task10_02" />
       <option name="METHOD_NAME" />
       <option name="GROUP_NAME" />
       <option name="TEST_OBJECT" value="CLASS" />
@@ -696,17 +715,17 @@
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="TestNG.task06_01" />
       <item index="1" class="java.lang.String" itemvalue="TestNG.task07_01" />
-      <item index="2" class="java.lang.String" itemvalue="TestNG.task08_01" />
-      <item index="3" class="java.lang.String" itemvalue="TestNG.task06_01_2v" />
-      <item index="4" class="java.lang.String" itemvalue="TestNG.task10_01" />
+      <item index="2" class="java.lang.String" itemvalue="TestNG.task06_01_2v" />
+      <item index="3" class="java.lang.String" itemvalue="TestNG.task10_01" />
+      <item index="4" class="java.lang.String" itemvalue="TestNG.task10_02" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="TestNG.task10_01" />
-        <item index="1" class="java.lang.String" itemvalue="TestNG.task06_01_2v" />
-        <item index="2" class="java.lang.String" itemvalue="TestNG.task06_01" />
-        <item index="3" class="java.lang.String" itemvalue="TestNG.task07_01" />
-        <item index="4" class="java.lang.String" itemvalue="TestNG.task08_01" />
+        <item index="1" class="java.lang.String" itemvalue="TestNG.task10_02" />
+        <item index="2" class="java.lang.String" itemvalue="TestNG.task06_01_2v" />
+        <item index="3" class="java.lang.String" itemvalue="TestNG.task06_01" />
+        <item index="4" class="java.lang.String" itemvalue="TestNG.task07_01" />
       </list>
     </recent_temporary>
   </component>
@@ -743,40 +762,40 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="task10_01 - 2016.12.14 at 09h 36m 13s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 15h 56m 29s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="task10_01 - 2016.12.14 at 09h 50m 43s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 15h 57m 38s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="task10_01 - 2016.12.14 at 09h 52m 12s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 16h 00m 17s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="task10_01 - 2016.12.14 at 10h 00m 44s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 16h 02m 52s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="task10_01 - 2016.12.14 at 10h 02m 11s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 16h 04m 29s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="task10_01 - 2016.12.14 at 10h 05m 00s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 16h 06m 47s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="task10_01 - 2016.12.14 at 10h 07m 22s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 16h 08m 05s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="task10_01 - 2016.12.14 at 10h 09m 10s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 16h 09m 14s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="task10_01 - 2016.12.14 at 10h 11m 43s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 16h 10m 50s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="task10_01 - 2016.12.14 at 10h 13m 02s.xml">
+    <history-entry file="task10_01 - 2016.12.15 at 16h 14m 11s.xml">
       <configuration name="task10_01" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="55" y="-8" width="1873" height="1096" extended-state="6" />
-    <editor active="false" />
+    <frame x="55" y="-8" width="1873" height="1096" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -785,7 +804,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32101488" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.43360996" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43360996" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2498621" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -837,13 +856,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/java/comqa/task04_02.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="67" selection-start-line="66" selection-start-column="67" selection-end-line="66" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1091,7 +1103,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="175" column="46" selection-start-line="175" selection-start-column="46" selection-end-line="175" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1109,19 +1120,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="37" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/comqa/task05_02.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1129,7 +1131,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="99" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="99" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1137,7 +1138,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.024460431">
           <caret line="161" column="0" selection-start-line="161" selection-start-column="0" selection-end-line="161" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1157,9 +1157,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.179856">
           <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1167,25 +1164,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.9354355">
           <caret line="177" column="0" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#3608#3609#0" expanded="false" />
-            <element signature="e#3682#3683#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/comqa/task08_01.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1587#1588#0" expanded="false" />
-            <element signature="e#1646#1647#0" expanded="false" />
-            <element signature="e#1692#1693#0" expanded="false" />
-            <element signature="e#1757#1758#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1203,7 +1181,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="91" column="36" selection-start-line="91" selection-start-column="36" selection-end-line="91" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1217,10 +1194,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/comqa/task08_01.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/comqa/task10_02.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/comqa/TestBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="102" column="16" selection-start-line="102" selection-start-column="16" selection-end-line="102" selection-end-column="16" />
+          <caret line="96" column="0" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1229,8 +1230,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/comqa/task10_01.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6081081">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5405405">
+          <caret line="58" column="70" selection-start-line="58" selection-start-column="70" selection-end-line="58" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
