@@ -30,7 +30,6 @@ public class task10_01 extends TestBase {
             loginToAdminApp();
             listResults.clear();
             checkAllProductsFromCatalogCategory();
-            tempVoid();
             assertTrue(isAllresultsOk(listResults));
         } catch (NumberFormatException e) {
             System.out.println("Some pages contains browser errors!");
