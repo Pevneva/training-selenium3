@@ -1,6 +1,7 @@
 package comqa;
 
 import com.google.common.io.Files;
+import comqa.app.Application;
 import net.lightbody.bmp.BrowserMobProxy;
 import net.lightbody.bmp.BrowserMobProxyServer;
 import net.lightbody.bmp.client.ClientUtil;
@@ -71,9 +72,28 @@ public class TestBase {
     By passwordFieldField = By.name("password");
     By loginButton = By.name("login");
 
+    public static ThreadLocal<Application> tlApp = new ThreadLocal<>();
+    public Application app;
+
 
     @BeforeClass
     public void start() {
+
+        if (tlApp.get() != null) {
+            app = tlApp.get();
+            return;
+        }
+
+        app = new Application();
+        tlApp.set(app);
+
+        Runtime.getRuntime().addShutdownHook(
+                new Thread(() -> { app.quit(); app = null; }));
+    }
+
+
+
+
         //driver = new FirefoxDriver();
 //        driver = new ChromeDriver();
 
@@ -82,40 +102,33 @@ public class TestBase {
 //        logPrefs.enable(LogType.PERFORMANCE, Level.ALL);
 //        cap.setCapability(CapabilityType.LOGGING_PREFS, logPrefs);
 
-        proxy = new BrowserMobProxyServer();
-        proxy.start(0);
-        Proxy seleniumProxy = ClientUtil.createSeleniumProxy(proxy);
-        DesiredCapabilities capabilities = new DesiredCapabilities();
+//        proxy = new BrowserMobProxyServer();
+//        proxy.start(0);
+//        Proxy seleniumProxy = ClientUtil.createSeleniumProxy(proxy);
+//        DesiredCapabilities capabilities = new DesiredCapabilities();
+//
+//        Proxy proxy = new Proxy();
+//        proxy.setHttpProxy("localhost:8888");
+//        DesiredCapabilities caps = new DesiredCapabilities();
+//        caps.setCapability("proxy", proxy);
+////        WebDriver driver = new ChromeDriver(caps);
+//
+////        driver = new EventFiringWebDriver(new ChromeDriver());
+//        driver = new EventFiringWebDriver(new ChromeDriver(capabilities));
+////        driver = new EventFiringWebDriver(new ChromeDriver(cap));
+//        driver.register(new MyListener());
+//        wait = new WebDriverWait(driver, 10);
+//        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+//    }
 
-        Proxy proxy = new Proxy();
-        proxy.setHttpProxy("localhost:8888");
-        DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("proxy", proxy);
-//        WebDriver driver = new ChromeDriver(caps);
 
-//        driver = new EventFiringWebDriver(new ChromeDriver());
-        driver = new EventFiringWebDriver(new ChromeDriver(capabilities));
-//        driver = new EventFiringWebDriver(new ChromeDriver(cap));
-        driver.register(new MyListener());
-        wait = new WebDriverWait(driver, 10);
-        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-    }
+//    @AfterClass
+//    public void stop() {
+//        driver.quit();
+//        driver = null;
+//    }
 
 
-    @AfterClass
-    public void stop() {
-        driver.quit();
-        driver = null;
-    }
-
-    public void selectValueInSelectbox(By bySelectBox, By bySelectBoxOptions, String value){
-        driver.findElement(bySelectBox).click();
-        for (int i=0;i<driver.findElements(bySelectBoxOptions).size();i++){
-            if (driver.findElements(bySelectBoxOptions).get(i).getText().equals(value)){
-                driver.findElements(bySelectBoxOptions).get(i).click();
-            }
-        }
-    }
 
     public void loginToAdminApp() {
         driver.get(startAdminUrl);
